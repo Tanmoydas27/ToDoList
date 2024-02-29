@@ -1,6 +1,7 @@
 # ToDo List Web Application
 
-This is a simple ToDo list web application built using Node.js, Express.js, EJS, and MongoDB. It allows users to register, log in, add tasks, update tasks, and delete tasks.
+This is a simple ToDo list web application built using Node.js, Express.js, EJS, and MongoDB. It allows users to register, log in, add tasks,  and delete tasks.
+Mostly Focused on the Back-end 
 
 ## Features
 

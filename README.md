@@ -60,7 +60,7 @@ Contributions are welcome! Feel free to open an issue or submit a pull request.
 if you are facing any issue make sure 
    1. your port no 3001 is free for live .
    2. npm intalled
-   3. monoserver string rechecked
+   3. any mongodb error make sure your port is on the **"mongodb://127.0.0.1:27017/newToDoList"** or **"mongodb://localhost:27017/newToDoList"**
    4. provied an envirment (.env) with the values;
 
 

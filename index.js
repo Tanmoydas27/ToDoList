@@ -12,7 +12,7 @@ const findOrCreate = require('mongoose-findorcreate');
 
 //Here Implemented Mongoose...........................................................
 
-const mongoString = process.env.MONGODB;
+const mongoString ="mongodb://127.0.0.1:27017/newToDoList" ;
 mongoose.connect(mongoString);
 const database = mongoose.connection;
  database.on('error',(error)=>{

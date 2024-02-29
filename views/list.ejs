@@ -1,0 +1,43 @@
+<%- include("header") -%>
+
+
+<div class="container"> 
+    <div style="width:100%; height: 100px;">
+        <h1 style="width: 30%; color: white;float: left; margin-left: 40%;">Wellcome, <%= UserName %></h1>
+        <h3 style="width: 10%; float: right;">
+            <form action="/logout" method="get">
+                <button type="submit" style="background-color: blueviolet;">Log Out</button>
+            </form></h3>
+    </div>
+    <div class="todo-app">
+        <h2>Today<img src="images/icon.png" alt=""></h2>
+        <input type="hidden" value="<%= UserId %>">
+        <form action="/user/profile/<%= UserId %> " method="post">
+            <div class="row">
+                <input type="text" name="newItem" id="input-box" placeholder="Add  Your Tasks" value="<%= itemName %>" required>
+                <button >Add</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="box">
+
+        <% newListItems.forEach(function(item,i){ %>
+           <form method="post" action="/delete/<%= UserId %>/<%= item._id %>">
+                <div class="item" style="width:60%;">
+                    <h3 style="margin-left: 30px;"><%= i+1%></h3>
+                        <p><%= item.itemName %></p>   
+                </div> 
+
+                <div style="max-width: 40%; float: right;margin-top: -60px; margin-right: 10px;">
+                    <button style="width: 10%; float: right; border-radius: 0;" type="submit; ">Delete</button>
+                </div>
+               
+            </form> 
+        <% }) %>
+
+    </div>
+
+</div>
+
+<%- include("footer") -%>

@@ -7,16 +7,14 @@ This is a simple ToDo list web application built using Node.js, Express.js, EJS,
 - User authentication using Passport.js
 - Google OAuth2 authentication for login
 - Add tasks with name
-- Update task names
 - Delete tasks
-- Responsive design
 
 ## Prerequisites
 
 Before running this application, make sure you have the following installed:
 
 - Node.js
-- MongoDB
+- MongoDB(not mandatory but if you want to see the data base then you have to)
 
 ## Getting Started
 
@@ -38,7 +36,6 @@ CLIENT_ID="654351480957-kjfqk4v6pdfi39aclai9rb8ddgh7ab2a.apps.googleusercontent.
 SECRET_ID="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"
 
 
-Replace `your-google-client-id` and `your-google-secret-id` with your actual Google OAuth2 client ID and secret.
 
 5. Run the application:
 
@@ -59,5 +56,11 @@ The application will be running on http://localhost:3001.
 
 Contributions are welcome! Feel free to open an issue or submit a pull request.
 
+## Issues
+if you are facing any issue make sure 
+   1. your port no 3001 is free for live .
+   2. npm intalled
+   3. monoserver string rechecked
+   4. provied an envirment (.env) with the values;
 
 

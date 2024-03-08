@@ -5,11 +5,10 @@ const ejs = require('ejs');
 require('dotenv').config();
 const passport = require('passport');
 const session = require('express-session');
-const passportLocalMongoose = require('passport-local-mongoose');
-const json = require('body-parser/lib/types/json');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const findOrCreate = require('mongoose-findorcreate');
 
+const User = require('./Schema/userSchema.js');
 //Here Implemented Mongoose...........................................................
 
 const mongoString ="mongodb://127.0.0.1:27017/newToDoList" ;
@@ -38,45 +37,6 @@ app.use(session({
 
 app.use(passport.initialize());
 app.use(passport.session());
- //Created Schema................................................................
-
-// const itemSchema = new mongoose.Schema({
-//    name : String
-// });
-
-const userSchema = new mongoose.Schema({
-   username : {
-      type:String,
-      require : true
-   },
-   password : {
-      type:String,
-      require: true
-   },
-   googleId:{
-      type: String,
-      require : true
-   },
-   name:{
-      type : String,
-      require:true
-   },
-   tasks: [
-      {
-         itemName :{
-            type:String,
-            require : true
-         } 
-      }
-   ]
-});
-
-userSchema.plugin(passportLocalMongoose);
-userSchema.plugin(findOrCreate);
-
-// const Item = mongoose.model("Item", itemSchema)
-
-const User = mongoose.model("User", userSchema);
 
 
 passport.use(User.createStrategy());
